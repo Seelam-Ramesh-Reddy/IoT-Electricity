@@ -1,0 +1,162 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!------ Include the above in your HEAD tag ---------->
+<div style="text-align: center">
+  <h1>{{message}}</h1>
+</div>
+
+<div class="container h-100">
+  <div class="wrapper">
+    <form>
+      <fieldset>
+        <h2 style="text-align:center;"><span class="text-effect active-animatioon">&emsp;IoTElectricity (IoTE)&emsp;</span></h2>
+        <div class="holder">
+          <h4 class="zone-text">Chennai Zone, India.</h4>
+          <div id="rmu1" class="firstBox">
+            <!-- <h5>RMU-1</h5> -->
+            <p><small>Loc: {{user.location}}</small></p>
+            <p><small>Switch:</small>
+              <label class="switch switch-green">
+                <input id="switch-input1" type="checkbox" class="switch-input" checked>
+                <span class="switch-label" data-on="On" data-off="Off"></span>
+                <span class="switch-handle"></span>
+              </label>
+            </p>
+            <p><small>Time: <span id="timestampfont">{{user.timestamp}}</span></small></p>
+            <div id="bubble1" class="bubble1">Issue occured!!</div>
+          </div>
+          <div id="powerstation" class="secondBox">
+            <h4>POWER <br> SUB-STATION</h4>
+          </div>
+          <div id="rmu2" class="thirdBox">
+            <!-- <h5>RMU-2</h5> -->
+            <p><small>Loc: {{user1.location}}</small></p>
+            <p><small>Switch:</small>
+              <label class="switch switch-green">
+                <input id="switch-input2" type="checkbox" class="switch-input" checked>
+                <span class="switch-label" data-on="On" data-off="Off"></span>
+                <span class="switch-handle"></span>
+              </label>
+            </p>
+            <p><small>Time: <span id="timestampfont">{{user1.timestamp}}</span></small></p>
+            <div id="bubble" class="bubble">Issue occured!!</div>
+          </div>
+          <div id="transformer-1" class="fourthBox">
+            <p class="title">Transformer 1</p>
+            <p><small>Loc:Guindy</small></p>
+            <p class="power-text"><small>Power:</small></p>
+            <div class="power-result">
+              <span id="transformer1" class="action-button shadow animate blue" (click)="transformmer1Clicked()"> Read</span>
+             <p id="power1" class="power-result-align"> <small>{{transformer1}} kWh</small></p>            
+            </div>
+          </div>
+          <div id="transformer-2" class="fifthhBox">
+            <p class="title">Transformer 2</p>
+            <p><small>Loc:Velachery</small></p>
+            <p class="power-text"><small>Power: </small></p>
+            <div class="power-result">
+              <span id="transformer2" class="action-button shadow animate blue" (click)="transformmer2Clicked()"> Read</span>
+              <p id="power2" class="power-result-align"> <small>{{transformer2}} kWh</small></p>
+            </div>
+          </div>
+          <div id="transformer-3" class="sixBox">
+            <p class="title">Transformer 3</p>
+            <p><small>Loc:Tambaram</small></p>
+            <p class="power-text"><small>Power: </small></p>
+            <div class="power-result">
+              <span id="transformer3" class="action-button shadow animate blue" (click)="transformmer3Clicked()"> Read</span>
+              <p id="power3" class="power-result-align"> <small>{{transformer3}} kWh</small></p>
+            </div>
+          </div>
+          <div id="transformer-4" class="sevenBox">
+            <p class="title">Transformer 4</p>
+            <p><small>Loc:Perungudi</small></p>
+            <p class="power-text"><small>Power: </small></p>
+            <div class="power-result">
+              <span id="transformer4" class="action-button shadow animate blue" (click)="transformmer4Clicked()"> Read</span>
+              <p id="power4" class="power-result-align"> <small>{{transformer4}} kWh</small></p>
+            </div>
+          </div>
+          <div class="closeline" (click)="fadeLine()">
+            <i class="fa fa-times"></i>
+          </div>
+          <div id="home-1" class="homeOne">
+            <div><i class="w3-jumbo fa fa-home home-icon"></i>
+              <span class="home-text">
+                <p>Home</p>
+                <span id="home1" class="action-button shadow animate blue home-button" (click)="home1Clicked()"> Read</span>
+                <span id="result1" class="home-result"><small>{{home1}} kWh</small></span>
+              </span>
+            </div>
+          </div>
+          <div id="home-2" class="homeTwo">
+            <div><i class="w3-jumbo fa fa-home home-icon"></i>
+              <span class="home-text">
+                <p>Home</p>
+                <span id="home2" class="action-button shadow animate blue home-button" (click)="home2Clicked()"> Read</span>
+                <span id="result2" class="home-result"><small>{{home2}} kWh</small></span>
+              </span>
+            </div>
+          </div>
+          <div id="home-3" class="homeThree">
+            <div><i class="w3-jumbo fa fa-home home-icon"></i>
+              <span class="home-text">
+                <p>Home</p>
+                <span id="home3" class="action-button shadow animate blue home-button" (click)="home3Clicked()"> Read</span>
+                <span id="result3" class="home-result"><small>{{home3}} kWh</small></span>
+              </span>
+            </div>
+          </div>
+          <div id="home-4" class="homeFour">
+            <div><i class="w3-jumbo fa fa-home home-icon"></i>
+              <span class="home-text">
+                <p>Home</p>
+                <span id="home4" class="action-button shadow animate blue home-button" (click)="home4Clicked()"> Read</span>
+                <span id="result4" class="home-result"><small>{{home4}} kWh</small></span>
+              </span>
+            </div>
+          </div>
+          <div id="home-5" class="homeFive">
+            <div><i class="w3-jumbo fa fa-home home-icon"></i>
+              <span class="home-text">
+                <p>Home</p>
+                <span id="home5" class="action-button shadow animate blue home-button disable-button" (click)="home1Clicked()"> Read</span>
+  
+              </span>
+            </div>
+          </div>
+          <div id="home-6" class="homeSix">
+            <div><i class="w3-jumbo fa fa-home home-icon"></i>
+              <span class="home-text">
+                <p>Home</p>
+                <span id="home6" class="action-button shadow animate blue home-button disable-button" (click)="home1Clicked()"> Read</span>
+              </span>
+            </div>
+          </div>
+          <div id="home-7" class="homeSeven">
+            <div><i class="w3-jumbo fa fa-home home-icon"></i>
+              <span class="home-text">
+                <p>Home</p>
+                <span id="home7" class="action-button shadow animate blue home-button disable-button" (click)="home1Clicked()"> Read</span>
+
+              </span>
+            </div>
+          </div>
+          <div id="home-8" class="homeEight">
+            <div><i class="w3-jumbo fa fa-home home-icon"></i>
+              <span class="home-text">
+                <p>Home</p>
+                <span id="home8" class="action-button shadow animate blue home-button disable-button" (click)="home1Clicked()"> Read</span>
+     
+              </span>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+</div>
